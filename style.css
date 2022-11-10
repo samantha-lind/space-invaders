@@ -1,0 +1,53 @@
+body {
+    background-image: url("./forest.jpeg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 50px;
+    transition: all ease-in-out 200ms;
+}
+
+.grid {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #86ad8b;
+    border-radius: 15px;
+}
+
+.grid div {
+    height: 40px;
+    width: 40px;
+}
+
+.shooter {
+    background-image: url("./shooter.png");
+    background-size: 40px;
+}
+
+.squirrel {
+    background-image: url("./squirrel.png");
+    background-size: 40px;
+}
+
+.woof {
+    background-image: url("./woof.png");
+    background-size: 40px;
+    background-repeat: no-repeat;
+}
+
+.score {
+    color: white;
+    font-size: 20px;
+    margin-right: 100px;
+    background-color: black;
+    padding: 100px;
+    border-radius: 25px;
+}
+
+
+
