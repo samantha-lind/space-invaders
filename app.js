@@ -8,10 +8,14 @@ let results = document.querySelector("body");
 let squirrelsRemoved = [];
 let score = 0;
 let woofsId;
+let bottom = [
+    195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209,
+    210,
+];
 
 //this loop creates 225 divs and nestles them within the main grid div
 for (let i = 0; i < 225; i++) {
-    const square = document.createElement("div");
+    let square = document.createElement("div");
     grid.appendChild(square);
 }
 
@@ -88,10 +92,6 @@ function moveSquirrels() {
     }
 
     addSquirrels();
-    if (squirrels[squirrels.length - 1] > 220) {
-        clearInterval(squirrelsId);
-        results.innerText = "Game Over, the squirrel reached the bottom";
-    }
 
     //this sends a game over and stops the interval if any square contains both the squirrel and shooter classes simulataneously
 
@@ -106,6 +106,15 @@ function moveSquirrels() {
         clearInterval(woofsId);
 
         results.innerText = "You win";
+    }
+    for (let i = 0; i < bottom.length; i++) {
+        if (squares[bottom[i]].classList.contains("squirrel")) {
+            {
+                clearInterval(squirrelsId);
+                results.innerText =
+                    "Game Over, the squirrel reached the bottom!";
+            }
+        }
     }
 }
 
@@ -130,7 +139,6 @@ function woofs(e) {
 
             const squirrelRemoved = squirrels.indexOf(currentWoofsIndex);
             squirrelsRemoved.push(squirrelRemoved);
-            updateScore();
         }
     }
 
